@@ -15,5 +15,5 @@ add_executable(tests main_test.cpp)
 target_link_libraries(tests gtest_main)
 gtest_discover_tests(tests)
 
-# Adding the test module
-add_subdirectory(module)
+# Adding the test subdirectories
+add_subdirectory(value)
