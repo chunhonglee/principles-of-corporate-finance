@@ -39,7 +39,7 @@ namespace value
         return presentValue;
     }
 
-    float calculatePerpetuityPresentValue(float C, float r, float g, bool due)
+    float calculatePresentValuePerpetuity(float C, float r, float g, bool due)
     {
         if (std::abs(r) < std::numeric_limits<float>::epsilon())
         {
@@ -60,14 +60,14 @@ namespace value
         return perpetuityPresentValue;
     }
 
-    float calculatePerpetuityFutureValue()
+    float calculateFutureValuePerpetuity()
     {
         float perpetuityFutureValue = std::numeric_limits<float>::infinity();
 
         return perpetuityFutureValue;
     }
 
-    float calculateAnnuityPresentValue(float C, float r, float t, float g, bool due)
+    float calculatePresentValueAnnuity(float C, float r, float t, float g, bool due)
     {
         if (std::abs(r) < std::numeric_limits<float>::epsilon())
         {
@@ -93,20 +93,20 @@ namespace value
         return annuityPresentValue;
     }
 
-    float calculateAnnuityFutureValue(float C, float r, float t, bool due)
+    float calculateFutureValueAnnuity(float C, float r, float t, float g, bool due)
     {
         if (std::abs(r) < std::numeric_limits<float>::epsilon())
         {
             throw std::invalid_argument("Division by zero - The value r can't be 0");
         }
 
-        float annuity = calculateAnnuityPresentValue(C, r, t, due);
+        float annuity = calculatePresentValueAnnuity(C, r, t, g, due);
         float annuityFutureValue = annuity * pow(1 + r, t);
 
         return annuityFutureValue;
     }
 
-    float calculateCompoundingInterestPresentValue(float C, float r, float m, float t)
+    float calculatePresentValueCompoundingInterest(float C, float r, float t, float m)
     {
         float presentValue = 0;
         if (std::isinf(m) == true)
@@ -123,7 +123,7 @@ namespace value
         return presentValue;
     }
 
-    float calculateCompoundingInterestFutureValue(float C, float r, float m, float t)
+    float calculateFutureValueCompoundingInterest(float C, float r, float t, float m)
     {
         float futureValue = 0;
         if (std::isinf(m) == true)
