@@ -11,9 +11,9 @@ FetchContent_MakeAvailable(googletest)
 include(GoogleTest)
 
 # Creating an executable of the main_test.cpp and linking it with gtest
-add_executable(tests main_test.cpp)
-target_link_libraries(tests gtest_main)
-gtest_discover_tests(tests)
+add_executable(main_test main_test.cpp)
+target_link_libraries(main_test gtest_main)
+gtest_discover_tests(main_test)
 
 # Adding the test subdirectories
 add_subdirectory(value)

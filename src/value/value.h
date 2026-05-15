@@ -45,7 +45,7 @@ namespace value
     float calculateNetPresentValue(float presentValue, float investment);
 
     /**
-     * @brief Calculates the discounted cash flow.
+     * @brief Calculates the discounted cash flow (DCF).
      *
      * Given a vector of cashflows, calculates the present value of the cashflows given the discount rate.
      * Where each index i corresponds to the cashflow at the end of period i.
