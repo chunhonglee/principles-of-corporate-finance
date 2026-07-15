@@ -110,7 +110,7 @@ namespace value
      * @param g The growth rate.
      * @param due If true, calculates the annuity due.
      *              Defaults to false.
-     * @return float The calculated future value of the annuity
+     * @return float The calculated future value of the annuity.
      */
     float calculateFutureValueAnnuity(float C, float r, float t, float g = 0, bool due = false);
 
@@ -126,7 +126,7 @@ namespace value
      * @param m The frequency of compounding within each year t.
      *              Defaults to std::numeric_limits<float>::infinity(),
      *              which represents continuous compounding.
-     * @return float
+     * @return float The calculated present value with compounding interest.
      */
     float calculatePresentValueCompoundingInterest(float C, float r, float t = 1, float m = std::numeric_limits<float>::infinity());
 
@@ -142,7 +142,7 @@ namespace value
      * @param m The frequency of compounding within each year t.
      *              Defaults to std::numeric_limits<float>::infinity(),
      *              which represents continuous compounding
-     * @return float
+     * @return float The calculated future value with compounding interest.
      */
     float calculateFutureValueCompoundingInterest(float C, float r, float t = 1, float m = std::numeric_limits<float>::infinity());
 
