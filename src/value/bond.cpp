@@ -27,6 +27,35 @@ namespace value
         return presentValue;
     }
 
+    float Bond::calculateDuration()
+    {
+        float faceValue = this->faceValue;
+        float couponRate = this->couponRate;
+        float r = this->yieldToMaturity;
+        float t = this->timeToMaturity;
+
+        float coupon = faceValue * couponRate;
+        float presentValue = this->calculatePresentValue();
+        float duration = 0;
+        for (int i = 1; i <= t; i++)
+        {
+            duration += i * value::calculatePresentValue(coupon, r, i);
+        }
+        duration += t * value::calculatePresentValue(faceValue, r, t);
+        duration /= presentValue;
+
+        return duration;
+    }
+
+    float Bond::calculateModifiedDuration()
+    {
+        float yield = this->yieldToMaturity;
+        float duration = this->calculateDuration();
+        float modifiedDuration = duration / (1 + yield);
+
+        return modifiedDuration;
+    }
+
     float Bond::getFaceValue()
     {
         return this->faceValue;

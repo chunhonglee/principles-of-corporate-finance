@@ -35,6 +35,20 @@ namespace value
         float calculatePresentValue();
 
         /**
+         * @brief Calculates the duration of the bond. 
+         * 
+         * @return float The calculated duration value of the bond. 
+         */
+        float calculateDuration();
+
+        /**
+         * @brief Calculates the modified duration of the bond.
+         *
+         * @return float The percentage change to the bond value. 
+         */
+        float calculateModifiedDuration();
+
+        /**
          * @brief Get the face value.
          *
          * @return float The face value.
