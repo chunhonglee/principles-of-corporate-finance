@@ -139,4 +139,18 @@ namespace value
         return futureValue;
     }
 
+    float calculateRealInterestRate(float rNominal, float i)
+    {
+        float rReal = (1 + rNominal) / (1 + i) - 1;
+
+        return rReal;
+    }
+
+    float calculateNominalInterestRate(float rReal, float i)
+    {
+        float rNominal = (1 + rReal) * (1 + i) - 1;
+
+        return rNominal;
+    }
+
 }

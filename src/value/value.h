@@ -146,6 +146,23 @@ namespace value
      */
     float calculateFutureValueCompoundingInterest(float C, float r, float t = 1, float m = std::numeric_limits<float>::infinity());
 
+    /**
+     * @brief Calculates the real interest rate.
+     *
+     * @param rNominal The nominal rate of interest.
+     * @param i The rate of inflation.
+     * @return float The calculated real interest rate.
+     */
+    float calculateRealInterestRate(float rNominal, float i);
+
+    /**
+     * @brief Calculates the nominal interest rate.
+     *
+     * @param rReal The real rate of interest.
+     * @param i The rate of inflation.
+     * @return float The calculated nominal interest rate.
+     */
+    float calculateNominalInterestRate(float rReal, float i);
 }
 
 #endif

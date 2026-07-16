@@ -109,3 +109,25 @@ TEST(ValueTest, ValidFutureValueCompoundingInterest)
     float errorBound = 0.0001;
     EXPECT_NEAR(futureValueCompoundingInterest, result, errorBound);
 }
+
+TEST(ValueTest, ValidRealInterestRate)
+{
+    float rNominal = 0.10;
+    float i = 0.06;
+
+    float rReal = value::calculateRealInterestRate(rNominal, i);
+    float result = 0.03774;
+    float errorBound = 0.00001;
+    EXPECT_NEAR(rReal, result, errorBound);
+}
+
+TEST(ValueTest, ValidNominalInterestRate)
+{
+    float rReal = 0.03774;
+    float i = 0.06;
+
+    float rNominal = value::calculateNominalInterestRate(rReal, i);
+    float result = 0.10;
+    float errorBound = 0.01;
+    EXPECT_NEAR(rNominal, result, errorBound);
+}
