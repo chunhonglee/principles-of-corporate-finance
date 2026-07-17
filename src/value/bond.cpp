@@ -15,9 +15,10 @@ namespace value
     float Bond::calculatePresentValue()
     {
         float faceValue = this->faceValue;
-        float couponRate = this->couponRate;
-        float r = this->yieldToMaturity / this->numberOfPayments;
-        float t = this->timeToMaturity;
+        float n = this->numberOfPayments;
+        float couponRate = this->couponRate / n;
+        float r = this->yieldToMaturity / n;
+        float t = this->timeToMaturity * n;
 
         float coupon = faceValue * couponRate;
         float annuity = value::calculatePresentValueAnnuity(coupon, r, t);
@@ -30,26 +31,32 @@ namespace value
     float Bond::calculateDuration()
     {
         float faceValue = this->faceValue;
-        float couponRate = this->couponRate;
-        float r = this->yieldToMaturity;
-        float t = this->timeToMaturity;
+        float n = this->numberOfPayments;
+        float couponRate = this->couponRate / n;
+        float r = this->yieldToMaturity / n;
+        float t = this->timeToMaturity * n;
 
         float coupon = faceValue * couponRate;
         float presentValue = this->calculatePresentValue();
-        float duration = 0;
+
+        float couponsValue = 0;
         for (int i = 1; i <= t; i++)
         {
-            duration += i * value::calculatePresentValue(coupon, r, i);
+            couponsValue += i * value::calculatePresentValue(coupon, r, i);
         }
-        duration += t * value::calculatePresentValue(faceValue, r, t);
+        float principalValue = t * value::calculatePresentValue(faceValue, r, t);
+
+        float duration = couponsValue + principalValue;
         duration /= presentValue;
+        duration /= n;
 
         return duration;
     }
 
     float Bond::calculateModifiedDuration()
     {
-        float yield = this->yieldToMaturity;
+        float n = this->numberOfPayments;
+        float yield = this->yieldToMaturity / n;
         float duration = this->calculateDuration();
         float modifiedDuration = duration / (1 + yield);
 
