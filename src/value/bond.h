@@ -28,27 +28,6 @@ namespace value
         Bond(float faceValue, float couponRate, float yieldToMaturity, float timeToMaturity, float numberOfPayments = 1);
 
         /**
-         * @brief Calculates the present value (PV) of the bond.
-         *
-         * @return float The calculated present value of the bond.
-         */
-        float calculatePresentValue();
-
-        /**
-         * @brief Calculates the duration of the bond. 
-         * 
-         * @return float The calculated duration value of the bond. 
-         */
-        float calculateDuration();
-
-        /**
-         * @brief Calculates the modified duration of the bond.
-         *
-         * @return float The percentage change to the bond value. 
-         */
-        float calculateModifiedDuration();
-
-        /**
          * @brief Get the face value.
          *
          * @return float The face value.
@@ -83,6 +62,27 @@ namespace value
          */
         float getNumberOfPayments();
     };
+
+    /**
+     * @brief Calculates the present value (PV) of the bond.
+     *
+     * @return float The calculated present value of the bond.
+     */
+    float calculatePresentValue(Bond &bond);
+
+    /**
+     * @brief Calculates the duration of the bond.
+     *
+     * @return float The calculated duration value of the bond.
+     */
+    float calculateDuration(Bond &bond);
+
+    /**
+     * @brief Calculates the modified duration of the bond.
+     *
+     * @return float The percentage change to the bond value.
+     */
+    float calculateModifiedDuration(Bond &bond);
 }
 
 #endif

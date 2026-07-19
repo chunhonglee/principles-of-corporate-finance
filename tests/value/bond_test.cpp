@@ -12,7 +12,7 @@ TEST(BondTest, ValidBondOnePayment)
     float numberOfPayments = 1;
 
     value::Bond bond = value::Bond(faceValue, couponRate, yieldToMaturity, timeToMaturity, numberOfPayments);
-    float presentValue = bond.calculatePresentValue();
+    float presentValue = value::calculatePresentValue(bond);
     float result = 92.39;
     float errorBound = 0.01;
     EXPECT_NEAR(presentValue, result, errorBound);
@@ -21,13 +21,13 @@ TEST(BondTest, ValidBondOnePayment)
 TEST(BondTest, ValidBondTwoPayments)
 {
     float faceValue = 1000;
-    float couponRate = 0.0125;
+    float couponRate = 0.025;
     float yieldToMaturity = 0.00252;
-    float timeToMaturity = 8;
+    float timeToMaturity = 4;
     float numberOfPayments = 2;
 
     value::Bond bond = value::Bond(faceValue, couponRate, yieldToMaturity, timeToMaturity, numberOfPayments);
-    float presentValue = bond.calculatePresentValue();
+    float presentValue = value::calculatePresentValue(bond);
     float result = 1089.41;
     float errorBound = 0.01;
     EXPECT_NEAR(presentValue, result, errorBound);
@@ -42,7 +42,7 @@ TEST(BondTest, ValidBondDuration)
     float numberOfPayments = 1;
 
     value::Bond bond = value::Bond(faceValue, couponRate, yieldToMaturity, timeToMaturity, numberOfPayments);
-    float duration = bond.calculateDuration();
+    float duration = value::calculateDuration(bond);
     float result = 5.69;
     float errorBound = 0.01;
     EXPECT_NEAR(duration, result, errorBound);
@@ -57,7 +57,7 @@ TEST(BondTest, ValidBondModifiedDuration)
     float numberOfPayments = 1;
 
     value::Bond bond = value::Bond(faceValue, couponRate, yieldToMaturity, timeToMaturity, numberOfPayments);
-    float modifiedDuration = bond.calculateModifiedDuration();
+    float modifiedDuration = value::calculateModifiedDuration(bond);
     float result = 5.47;
     float errorBound = 0.01;
     EXPECT_NEAR(modifiedDuration, result, errorBound);
