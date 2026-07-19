@@ -66,6 +66,7 @@ namespace value
     /**
      * @brief Calculates the present value (PV) of the bond.
      *
+     * @param bond The bond
      * @return float The calculated present value of the bond.
      */
     float calculatePresentValue(Bond &bond);
@@ -73,6 +74,7 @@ namespace value
     /**
      * @brief Calculates the duration of the bond.
      *
+     * @param bond The bond
      * @return float The calculated duration value of the bond.
      */
     float calculateDuration(Bond &bond);
@@ -80,6 +82,7 @@ namespace value
     /**
      * @brief Calculates the modified duration of the bond.
      *
+     * @param bond The bond
      * @return float The percentage change to the bond value.
      */
     float calculateModifiedDuration(Bond &bond);
