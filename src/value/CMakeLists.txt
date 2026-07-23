@@ -2,4 +2,5 @@
 add_library(value
     value.cpp
     bond.cpp
+    stock.cpp
 )
