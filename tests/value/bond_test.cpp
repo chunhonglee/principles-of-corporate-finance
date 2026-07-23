@@ -3,7 +3,7 @@
 #include "gtest/gtest.h"
 #include "../../src/value/bond.h"
 
-TEST(BondTest, ValidBondOnePayment)
+TEST(BondTest, ValidOnePayment)
 {
     float faceValue = 100;
     float couponRate = 0.035;
@@ -18,7 +18,7 @@ TEST(BondTest, ValidBondOnePayment)
     EXPECT_NEAR(presentValue, result, errorBound);
 }
 
-TEST(BondTest, ValidBondTwoPayments)
+TEST(BondTest, ValidTwoPayments)
 {
     float faceValue = 1000;
     float couponRate = 0.025;
@@ -33,7 +33,7 @@ TEST(BondTest, ValidBondTwoPayments)
     EXPECT_NEAR(presentValue, result, errorBound);
 }
 
-TEST(BondTest, ValidBondDuration)
+TEST(BondTest, ValidDuration)
 {
     float faceValue = 1000;
     float couponRate = 0.09;
@@ -48,7 +48,7 @@ TEST(BondTest, ValidBondDuration)
     EXPECT_NEAR(duration, result, errorBound);
 }
 
-TEST(BondTest, ValidBondModifiedDuration)
+TEST(BondTest, ValidModifiedDuration)
 {
     float faceValue = 1000;
     float couponRate = 0.09;
