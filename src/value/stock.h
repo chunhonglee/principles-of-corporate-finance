@@ -23,7 +23,7 @@ namespace value
          * @param terminalValue The terminal value of the stock.
          * @param costOfEquity The cost of equity of the stock.
          */
-        Stock(std::vector<float> dividends, float terminalValue, float costOfEquity);
+        Stock(std::vector<float> &dividends, float terminalValue, float costOfEquity);
 
         /**
          * @brief Get the dividends.

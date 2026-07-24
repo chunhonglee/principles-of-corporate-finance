@@ -3,7 +3,7 @@
 
 namespace value
 {
-    Stock::Stock(std::vector<float> dividends, float terminalValue, float costOfEquity)
+    Stock::Stock(std::vector<float> &dividends, float terminalValue, float costOfEquity)
     {
         this->dividends = dividends;
         this->terminalValue = terminalValue;
