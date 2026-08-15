@@ -17,3 +17,4 @@ gtest_discover_tests(main_test)
 
 # Adding the test subdirectories
 add_subdirectory(value)
+add_subdirectory(risk)
