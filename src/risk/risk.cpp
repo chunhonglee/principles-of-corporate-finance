@@ -10,4 +10,13 @@ namespace risk
 
         return sharpeRatio;
     }
+
+    float calculateExpectedReturn(float beta, float riskFreeRate, float marketRisk)
+    {
+        float expectedMarketRiskPremium = marketRisk - riskFreeRate;
+        float expectedReturn = beta * expectedMarketRiskPremium + riskFreeRate;
+
+        return expectedReturn;
+    }
+
 }
