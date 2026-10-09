@@ -1,0 +1,8 @@
+#ifndef FINANCING_DECISIONS_AND_MARKET_EFFICIENCY_H
+#define FINANCING_DECISIONS_AND_MARKET_EFFICIENCY_H
+
+namespace financing_decisions_and_market_effiency
+{
+}
+
+#endif
