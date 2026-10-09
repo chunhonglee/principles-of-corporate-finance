@@ -1,0 +1,7 @@
+# Creating an executable of the risk_test.cpp and linking it with gtest and the risk library in source
+add_executable(financing_decisions_and_market_efficiency_test
+    financing_decisions_and_market_efficiency_test.cpp
+)
+target_link_libraries(financing_decisions_and_market_efficiency_test gtest_main)
+target_link_libraries(financing_decisions_and_market_efficiency_test financing_decisions_and_market_efficiency)
+gtest_discover_tests(financing_decisions_and_market_efficiency_test)
