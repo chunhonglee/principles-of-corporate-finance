@@ -18,5 +18,5 @@ gtest_discover_tests(main_test)
 # Adding the test subdirectories
 add_subdirectory(value)
 add_subdirectory(risk)
-add_subdirectory(capital-budgeting)
-add_subdirectory(financing-decisions-and-market-efficiency)
+add_subdirectory(capital_budgeting)
+add_subdirectory(financing_decisions_and_market_efficiency)

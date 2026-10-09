@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "../../src/capital-budgeting/capital_budgeting.h"
+#include "../../src/capital_budgeting/capital_budgeting.h"
 
 TEST(CapitalBudgetingTest, DOL)
 {
