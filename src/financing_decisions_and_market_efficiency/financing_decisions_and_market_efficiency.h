@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 
-namespace financing_decisions_and_market_effiency
+namespace financing_decisions_and_market_efficiency
 {
     struct Bid
     {
