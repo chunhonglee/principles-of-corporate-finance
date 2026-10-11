@@ -1,8 +1,8 @@
-#include "financing_decisions_and_market_effiency.h"
+#include "financing_decisions_and_market_efficiency.h"
 #include <algorithm>
 #include <limits>
 
-namespace financing_decisions_and_market_effiency
+namespace financing_decisions_and_market_efficiency
 {
 
     std::pair<std::vector<Bid>, float> DiscriminatoryAuction::auction(const std::vector<Bid> &bids, int shares)

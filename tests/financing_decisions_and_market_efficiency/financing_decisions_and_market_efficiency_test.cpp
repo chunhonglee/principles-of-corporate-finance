@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
-#include "../../src/financing_decisions_and_market_efficiency/financing_decisions_and_market_effiency.h"
+#include "../../src/financing_decisions_and_market_efficiency/financing_decisions_and_market_efficiency.h"
 
-using namespace financing_decisions_and_market_effiency;
+using namespace financing_decisions_and_market_efficiency;
 
 TEST(FinancingDecisionsAndMarketEffiencyTest, DiscriminatoryAuctionTest)
 {
