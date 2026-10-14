@@ -9,4 +9,11 @@ namespace payout_policy_and_capital_structure
 
         return afterTaxWACC;
     }
+
+    float calculateTaxShield(float TC, float D)
+    {
+        float taxShield = TC * D;
+
+        return taxShield;
+    }
 }

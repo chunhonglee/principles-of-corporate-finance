@@ -16,3 +16,14 @@ TEST(PayoutPolicyAndCapitalStructureTest, AfterTaxWACC)
     float errorBound = 0.001;
     EXPECT_NEAR(afterTaxWacc, result, errorBound);
 }
+
+TEST(PayoutPolicyAndCapitalStructureTest, TaxShield)
+{
+    float TC = 0.21;
+    float D = 1000;
+
+    float taxShield = calculateTaxShield(TC, D);
+    float result = 210;
+    float errorBound = 1;
+    EXPECT_NEAR(taxShield, result, errorBound);
+}

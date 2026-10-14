@@ -14,6 +14,15 @@ namespace payout_policy_and_capital_structure
      * @return float The calcuclated After-Tax WACC value
      */
     float calculateAfterTaxWACC(float TC, float rD, float D, float rE, float E);
+
+    /**
+     * @brief Calculates the Tax Shield
+     * 
+     * @param TC The corporate tax rate
+     * @param D The market value of debt
+     * @return float The calculated Tax Shield
+     */
+    float calculateTaxShield(float TC, float D);
 }
 
 #endif
