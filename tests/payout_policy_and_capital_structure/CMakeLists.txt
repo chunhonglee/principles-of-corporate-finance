@@ -1,0 +1,7 @@
+# Creating an executable of the risk_test.cpp and linking it with gtest and the risk library in source
+add_executable(payout_policy_and_capital_structure_test
+    payout_policy_and_capital_structure_test.cpp
+)
+target_link_libraries(payout_policy_and_capital_structure_test gtest_main)
+target_link_libraries(payout_policy_and_capital_structure_test payout_policy_and_capital_structure)
+gtest_discover_tests(payout_policy_and_capital_structure_test)
