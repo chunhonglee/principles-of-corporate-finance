@@ -1,0 +1,7 @@
+# Creating an executable of the capital-budgeting.cpp and linking it with gtest and the risk library in source
+add_executable(corporate_objectives_and_governance_test
+    corporate_objectives_and_governance_test.cpp
+)
+target_link_libraries(corporate_objectives_and_governance_test gtest_main)
+target_link_libraries(corporate_objectives_and_governance_test corporate_objectives_and_governance)
+gtest_discover_tests(corporate_objectives_and_governance_test)
