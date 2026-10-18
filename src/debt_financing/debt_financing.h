@@ -1,5 +1,5 @@
-#ifndef DEBT_FINANCING
-#define DEBT_FINANCING
+#ifndef DEBT_FINANCING_H
+#define DEBT_FINANCING_H
 
 namespace debt_financing
 {
