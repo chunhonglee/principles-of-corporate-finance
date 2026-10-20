@@ -8,6 +8,7 @@ add_subdirectory(corporate_objectives_and_governance)
 add_subdirectory(options)
 add_subdirectory(debt_financing)
 add_subdirectory(risk_management)
+add_subdirectory(financial_planning_and_working_capital_management)
 
 # Creating an executable of the main.cpp
 add_executable(main main.cpp)
@@ -22,3 +23,4 @@ target_link_libraries(main corporate_objectives_and_governance)
 target_link_libraries(main options)
 target_link_libraries(main debt_financing)
 target_link_libraries(main risk_management)
+target_link_libraries(main financial_planning_and_working_capital_management)
