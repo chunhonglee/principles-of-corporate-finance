@@ -71,6 +71,52 @@ namespace financial_planning_and_working_capital_management
      */
     float calculateReturnOnEquity(float netIncome, float equity);
 
+    /**
+     * @brief Calculates the Asset Turnover Ratio
+     * 
+     * @param sales The sales
+     * @param totalAssets The total assets at start of year
+     * @return float The calculated Asset Turnover Ratio
+     */
+    float calculateAssetTurnover(float sales, float totalAssets);
+
+    /**
+     * @brief Calculates the Profit Margin
+     * 
+     * @param netIncome The net income
+     * @param sales The sales
+     * @return float The calculated Profit Margin
+     */
+    float calculateProfitMargin(float netIncome, float sales);
+
+    /**
+     * @brief Calculates the Operating Profit Margin
+     * 
+     * @param interest The after-tax interest
+     * @param netIncome The net income
+     * @param sales The sales
+     * @return float The calculated Operating Profit Margin
+     */
+    float calculateOperatingProfitMargin(float interest, float netIncome, float sales);
+
+    /**
+     * @brief Calculates the Inventory Turnover
+     * 
+     * @param costOfGoods The cost of goods sold
+     * @param inventory The inventory at start of year
+     * @return float The calculated Inventory Turnover
+     */
+    float calculateInventoryTurnover(float costOfGoods, float inventory);
+
+    /**
+     * @brief Calculates the Receivables Turnover
+     * 
+     * @param sales The sales
+     * @param receivables The receivable at start of year
+     * @return float The calculated Receivable Turnover
+     */
+    float calculateReceivablesTurnover(float sales, float receivables);
+
 }
 
 #endif

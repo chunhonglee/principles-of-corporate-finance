@@ -50,4 +50,39 @@ namespace financial_planning_and_working_capital_management
 
         return roe;
     }
+
+    float calculateAssetTurnover(float sales, float totalAssets)
+    {
+        float assetTurnover = sales / totalAssets;
+
+        return assetTurnover;
+    }
+
+    float calculateProfitMargin(float netIncome, float sales)
+    {
+        float profitMargin = netIncome / sales;
+
+        return profitMargin;
+    }
+
+    float calculateOperatingProfitMargin(float interest, float netIncome, float sales)
+    {
+        float operatingProfitMargin = (interest + netIncome) / sales;
+
+        return operatingProfitMargin;
+    }
+
+    float calculateInventoryTurnover(float costOfGoods, float inventory)
+    {
+        float inventoryTurnover = costOfGoods / inventory;
+
+        return inventoryTurnover;
+    }
+
+    float calculateReceivablesTurnover(float sales, float receivables)
+    {
+        float receivableTurnover = sales / receivables;
+
+        return receivableTurnover;
+    }
 }

@@ -73,3 +73,59 @@ TEST(FinancialPlanningAndWorkingCapitalManagementTest, ROETest)
     float errorBound = 0.001;
     EXPECT_NEAR(roe, result, errorBound);
 }
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, AssetTurnoverTest)
+{
+    float sales = 122286;
+    float totalAssets = 38118;
+
+    float assetTurnover = calculateAssetTurnover(sales, totalAssets);
+    float result = 3.21;
+    float errorBound = 0.01;
+    EXPECT_NEAR(assetTurnover, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, ProfitMarginTest)
+{
+    float netIncome = 1512;
+    float sales = 122286;
+
+    float profitMargin = calculateProfitMargin(netIncome, sales);
+    float result = 0.0124;
+    float errorBound = 0.0001;
+    EXPECT_NEAR(profitMargin, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, OperatingProfitMarginTest)
+{
+    float interest = (1 - 0.21) * 603;
+    float netIncome = 1512;
+    float sales = 122286;
+
+    float operatingProfitMargin = calculateOperatingProfitMargin(interest, netIncome, sales);
+    float result = 0.0163;
+    float errorBound = 0.0001;
+    EXPECT_NEAR(operatingProfitMargin, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, InventoryTurnoverTest)
+{
+    float costOfGoods = 95294;
+    float inventory = 6846;
+
+    float inventoryTurnover = calculateInventoryTurnover(costOfGoods, inventory);
+    float result = 13.9;
+    float errorBound = 0.1;
+    EXPECT_NEAR(inventoryTurnover, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, ReceivablesTurnoverTest)
+{
+    float sales = 122286;
+    float receivables = 1589;
+
+    float receivablesTurnover = calculateReceivablesTurnover(sales, receivables);
+    float result = 77.0;
+    float errorBound = 0.1;
+    EXPECT_NEAR(receivablesTurnover, result, errorBound);
+}
