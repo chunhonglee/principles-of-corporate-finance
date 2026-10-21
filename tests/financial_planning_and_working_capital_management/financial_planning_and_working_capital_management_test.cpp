@@ -129,3 +129,59 @@ TEST(FinancialPlanningAndWorkingCapitalManagementTest, ReceivablesTurnoverTest)
     float errorBound = 0.1;
     EXPECT_NEAR(receivablesTurnover, result, errorBound);
 }
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, LongTermDebtRatioTest)
+{
+    float debt = 12111;
+    float equity = 8573;
+
+    float longTermDebtRatio = calculateLongTermDebtRatio(debt, equity);
+    float result = 0.59;
+    float errorBound = 0.01;
+    EXPECT_NEAR(longTermDebtRatio, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, LongTermDebtEquityRatioTest)
+{
+    float debt = 12111;
+    float equity = 8573;
+
+    float longTermDebtEquityRatio = calculateLongTermDebtEquityRatio(debt, equity);
+    float result = 1.4;
+    float errorBound = 0.1;
+    EXPECT_NEAR(longTermDebtEquityRatio, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, TotalDebtRatioTest)
+{
+    float liabilities = 36683;
+    float assets = 45256;
+
+    float totalDebtRatio = calculateTotalDebtRatio(liabilities, assets);
+    float result = 0.81;
+    float errorBound = 0.01;
+    EXPECT_NEAR(totalDebtRatio, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, TimesInterestEarnedRatioTest)
+{
+    float ebit = 2584;
+    float interestPayments = 603;
+
+    float timesInterestEarned = calculateTimesInterestEarnedRatio(ebit, interestPayments);
+    float result = 4.3;
+    float errorBound = 0.1;
+    EXPECT_NEAR(timesInterestEarned, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, CashCoverageRatioTest)
+{
+    float ebit = 2584;
+    float depreciation = 2649;
+    float interestPayments = 603;
+
+    float cashCoverageRatio = calculateCashCoverageRatio(ebit, depreciation, interestPayments);
+    float result = 8.7;
+    float errorBound = 0.1;
+    EXPECT_NEAR(cashCoverageRatio, result, errorBound);
+}

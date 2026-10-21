@@ -85,4 +85,38 @@ namespace financial_planning_and_working_capital_management
 
         return receivableTurnover;
     }
+
+    float calculateLongTermDebtRatio(float debt, float equity)
+    {
+        float longTermDebtRatio = debt / (debt + equity);
+
+        return longTermDebtRatio;
+    }
+
+    float calculateLongTermDebtEquityRatio(float debt, float equity)
+    {
+        float longTermDebtEquityRatio = debt / equity;
+
+        return longTermDebtEquityRatio;
+    }
+
+    float calculateTotalDebtRatio(float liabilities, float assets)
+    {
+        float totalDebtRatio = liabilities / assets;
+
+        return totalDebtRatio;
+    }
+
+    float calculateTimesInterestEarnedRatio(float ebit, float interestPayments)
+    {
+        float timesInterestEarnedRatio = ebit / interestPayments;
+
+        return timesInterestEarnedRatio;
+    }
+
+    float calculateCashCoverageRatio(float ebit, float depreciation, float interestPayments) {
+        float cashCoverageRatio = (ebit + depreciation) / interestPayments;
+
+        return cashCoverageRatio;
+    }
 }

@@ -117,6 +117,51 @@ namespace financial_planning_and_working_capital_management
      */
     float calculateReceivablesTurnover(float sales, float receivables);
 
+    /**
+     * @brief Calculates the Long-Term Debt Ratio
+     * 
+     * @param debt The long-term debt
+     * @param equity The equity
+     * @return float The calculated Long-Term Debt Ratio
+     */
+    float calculateLongTermDebtRatio(float debt, float equity);
+
+    /**
+     * @brief Calculates the Long-Term Debt Equity Ratio
+     * 
+     * @param debt The long-term debt
+     * @param equity The equity
+     * @return float The calculated Long-Term Debt Equity Ratio
+     */
+    float calculateLongTermDebtEquityRatio(float debt, float equity);
+
+    /**
+     * @brief Calculates the Total Debt Ratio
+     * 
+     * @param liabilities The total liabilities
+     * @param assets The total assets
+     * @return float The calculated Total Debt Ratio
+     */
+    float calculateTotalDebtRatio(float liabilities, float assets);
+
+    /**
+     * @brief Calculates the Times Interest Earned Ratio
+     * 
+     * @param ebit The EBIT
+     * @param interestPayments The interest payments
+     * @return float The calculated Times Interest Earned Ratio
+     */
+    float calculateTimesInterestEarnedRatio(float ebit, float interestPayments);
+
+    /**
+     * @brief Calculates the Cash Coverage Ratio
+     * 
+     * @param ebit The EBIT
+     * @param depreciation The depreciation
+     * @param interestPayments The interest payments
+     * @return float The calculated Cash Coverage Ratio
+     */
+    float calculateCashCoverageRatio(float ebit, float depreciation, float interestPayments);
 }
 
 #endif
