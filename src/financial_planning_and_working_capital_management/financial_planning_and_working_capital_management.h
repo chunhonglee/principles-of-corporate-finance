@@ -162,6 +162,36 @@ namespace financial_planning_and_working_capital_management
      * @return float The calculated Cash Coverage Ratio
      */
     float calculateCashCoverageRatio(float ebit, float depreciation, float interestPayments);
+
+    /**
+     * @brief Calculates the Current Ratio
+     * 
+     * @param assets The current assets
+     * @param liabilities The current liabilities
+     * @return float The calculated Current Ratio
+     */
+    float calculateCurrentRatio(float assets, float liabilities);
+
+    /**
+     * @brief Calculates the Quick (Acid-Test) Ratio
+     * 
+     * @param cash The cash
+     * @param securities The marketable securities
+     * @param receivables The receivables
+     * @param liabilities The current liabilities
+     * @return float The calculated Quick Ratio
+     */
+    float calculateQuickRatio(float cash, float securities, float receivables, float liabilities);
+
+    /**
+     * @brief Calculates the Cash Ratio
+     * 
+     * @param cash The cash
+     * @param securities The marketable securities
+     * @param liabilities The current liabilities
+     * @return float The Cash Ratio
+     */
+    float calculateCashRatio(float cash, float securities, float liabilities);
 }
 
 #endif

@@ -114,9 +114,31 @@ namespace financial_planning_and_working_capital_management
         return timesInterestEarnedRatio;
     }
 
-    float calculateCashCoverageRatio(float ebit, float depreciation, float interestPayments) {
+    float calculateCashCoverageRatio(float ebit, float depreciation, float interestPayments)
+    {
         float cashCoverageRatio = (ebit + depreciation) / interestPayments;
 
         return cashCoverageRatio;
+    }
+
+    float calculateCurrentRatio(float assets, float liabilities)
+    {
+        float currentRatio = assets / liabilities;
+
+        return currentRatio;
+    }
+
+    float calculateQuickRatio(float cash, float securities, float receivables, float liabilities)
+    {
+        float quickRatio = (cash + securities + receivables) / liabilities;
+
+        return quickRatio;
+    }
+
+    float calculateCashRatio(float cash, float securities, float liabilities)
+    {
+        float cashRatio = (cash + securities) / liabilities;
+
+        return cashRatio;
     }
 }

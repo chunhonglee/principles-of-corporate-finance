@@ -185,3 +185,39 @@ TEST(FinancialPlanningAndWorkingCapitalManagementTest, CashCoverageRatioTest)
     float errorBound = 0.1;
     EXPECT_NEAR(cashCoverageRatio, result, errorBound);
 }
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, CurrentRatioTest)
+{
+    float assets = 10890;
+    float liabilities = 14243;
+
+    float currentRatio = calculateCurrentRatio(assets, liabilities);
+    float result = 0.76;
+    float errorBound = 0.01;
+    EXPECT_NEAR(currentRatio, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, QuickRatioTest)
+{
+    float cash = 1578;
+    float securities = 0;
+    float receivables = 1706;
+    float liabilities = 14243;
+
+    float quickRatio = calculateQuickRatio(cash, securities, receivables, liabilities);
+    float result = 0.23;
+    float errorBound = 0.01;
+    EXPECT_NEAR(quickRatio, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, CashRatioTest)
+{
+    float cash = 1578;
+    float securities = 0;
+    float liabilities = 14243;
+
+    float cashRatio = calculateCashRatio(cash, securities, liabilities);
+    float result = 0.11;
+    float errorBound = 0.01;
+    EXPECT_NEAR(cashRatio, result, errorBound);
+}
