@@ -1,0 +1,223 @@
+#include "gtest/gtest.h"
+#include "../../src/financial_planning_and_working_capital_management/financial_planning_and_working_capital_management.h"
+
+using namespace financial_planning_and_working_capital_management;
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, NetWorkingCapitalTest)
+{
+    float currentAssets = 10890;
+    float currentLiabilities = 14243;
+
+    float netWorkingCapital = calculateNetWorkingCapital(currentAssets, currentLiabilities);
+    float result = -3353;
+    float errorBound = 1;
+    EXPECT_NEAR(netWorkingCapital, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, EBITTest)
+{
+    float totalRevenues = 122286;
+    float costs = 117386;
+    float depreciation = 2649;
+    float otherIncome = 333;
+
+    float ebit = calculateEBIT(totalRevenues, costs, depreciation, otherIncome);
+    float result = 2584;
+    float errorBound = 1;
+    EXPECT_NEAR(ebit, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, EVATest)
+{
+    float incomeEarned = 1988;
+    float costOfCapital = 0.055;
+    float investment = 19907;
+
+    float eva = calculateEVA(incomeEarned, costOfCapital, investment);
+    float result = 893;
+    float errorBound = 1;
+    EXPECT_NEAR(eva, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, ROCTest)
+{
+    float interest = (1 - 0.21) * 603;
+    float netIncome = 1512;
+    float totalCapital = 19907;
+
+    float roc = calculateReturnOnCapital(interest, netIncome, totalCapital);
+    float result = 0.100;
+    float errorBound = 0.001;
+    EXPECT_NEAR(roc, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, ROATest)
+{
+    float interest = (1 - 0.21) * 603;
+    float netIncome = 1512;
+    float totalAssets = 38118;
+
+    float roa = calculateReturnOnAssets(interest, netIncome, totalAssets);
+    float result = 0.052;
+    float errorBound = 0.001;
+    EXPECT_NEAR(roa, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, ROETest)
+{
+    float netIncome = 1512;
+    float equity = 7835;
+
+    float roe = calculateReturnOnEquity(netIncome, equity);
+    float result = 0.193;
+    float errorBound = 0.001;
+    EXPECT_NEAR(roe, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, AssetTurnoverTest)
+{
+    float sales = 122286;
+    float totalAssets = 38118;
+
+    float assetTurnover = calculateAssetTurnover(sales, totalAssets);
+    float result = 3.21;
+    float errorBound = 0.01;
+    EXPECT_NEAR(assetTurnover, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, ProfitMarginTest)
+{
+    float netIncome = 1512;
+    float sales = 122286;
+
+    float profitMargin = calculateProfitMargin(netIncome, sales);
+    float result = 0.0124;
+    float errorBound = 0.0001;
+    EXPECT_NEAR(profitMargin, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, OperatingProfitMarginTest)
+{
+    float interest = (1 - 0.21) * 603;
+    float netIncome = 1512;
+    float sales = 122286;
+
+    float operatingProfitMargin = calculateOperatingProfitMargin(interest, netIncome, sales);
+    float result = 0.0163;
+    float errorBound = 0.0001;
+    EXPECT_NEAR(operatingProfitMargin, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, InventoryTurnoverTest)
+{
+    float costOfGoods = 95294;
+    float inventory = 6846;
+
+    float inventoryTurnover = calculateInventoryTurnover(costOfGoods, inventory);
+    float result = 13.9;
+    float errorBound = 0.1;
+    EXPECT_NEAR(inventoryTurnover, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, ReceivablesTurnoverTest)
+{
+    float sales = 122286;
+    float receivables = 1589;
+
+    float receivablesTurnover = calculateReceivablesTurnover(sales, receivables);
+    float result = 77.0;
+    float errorBound = 0.1;
+    EXPECT_NEAR(receivablesTurnover, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, LongTermDebtRatioTest)
+{
+    float debt = 12111;
+    float equity = 8573;
+
+    float longTermDebtRatio = calculateLongTermDebtRatio(debt, equity);
+    float result = 0.59;
+    float errorBound = 0.01;
+    EXPECT_NEAR(longTermDebtRatio, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, LongTermDebtEquityRatioTest)
+{
+    float debt = 12111;
+    float equity = 8573;
+
+    float longTermDebtEquityRatio = calculateLongTermDebtEquityRatio(debt, equity);
+    float result = 1.4;
+    float errorBound = 0.1;
+    EXPECT_NEAR(longTermDebtEquityRatio, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, TotalDebtRatioTest)
+{
+    float liabilities = 36683;
+    float assets = 45256;
+
+    float totalDebtRatio = calculateTotalDebtRatio(liabilities, assets);
+    float result = 0.81;
+    float errorBound = 0.01;
+    EXPECT_NEAR(totalDebtRatio, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, TimesInterestEarnedRatioTest)
+{
+    float ebit = 2584;
+    float interestPayments = 603;
+
+    float timesInterestEarned = calculateTimesInterestEarnedRatio(ebit, interestPayments);
+    float result = 4.3;
+    float errorBound = 0.1;
+    EXPECT_NEAR(timesInterestEarned, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, CashCoverageRatioTest)
+{
+    float ebit = 2584;
+    float depreciation = 2649;
+    float interestPayments = 603;
+
+    float cashCoverageRatio = calculateCashCoverageRatio(ebit, depreciation, interestPayments);
+    float result = 8.7;
+    float errorBound = 0.1;
+    EXPECT_NEAR(cashCoverageRatio, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, CurrentRatioTest)
+{
+    float assets = 10890;
+    float liabilities = 14243;
+
+    float currentRatio = calculateCurrentRatio(assets, liabilities);
+    float result = 0.76;
+    float errorBound = 0.01;
+    EXPECT_NEAR(currentRatio, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, QuickRatioTest)
+{
+    float cash = 1578;
+    float securities = 0;
+    float receivables = 1706;
+    float liabilities = 14243;
+
+    float quickRatio = calculateQuickRatio(cash, securities, receivables, liabilities);
+    float result = 0.23;
+    float errorBound = 0.01;
+    EXPECT_NEAR(quickRatio, result, errorBound);
+}
+
+TEST(FinancialPlanningAndWorkingCapitalManagementTest, CashRatioTest)
+{
+    float cash = 1578;
+    float securities = 0;
+    float liabilities = 14243;
+
+    float cashRatio = calculateCashRatio(cash, securities, liabilities);
+    float result = 0.11;
+    float errorBound = 0.01;
+    EXPECT_NEAR(cashRatio, result, errorBound);
+}

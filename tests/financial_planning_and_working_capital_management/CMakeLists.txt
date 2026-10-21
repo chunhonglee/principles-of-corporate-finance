@@ -1,0 +1,7 @@
+# Creating an executable of the capital-budgeting.cpp and linking it with gtest and the risk library in source
+add_executable(financial_planning_and_working_capital_management_test
+    financial_planning_and_working_capital_management_test.cpp
+)
+target_link_libraries(financial_planning_and_working_capital_management_test gtest_main)
+target_link_libraries(financial_planning_and_working_capital_management_test financial_planning_and_working_capital_management)
+gtest_discover_tests(financial_planning_and_working_capital_management_test)
