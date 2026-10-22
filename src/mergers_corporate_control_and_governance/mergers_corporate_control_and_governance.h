@@ -1,0 +1,9 @@
+#ifndef MERGERS_CORPORATE_CONTROL_AND_GOVERNANCE_H
+#define MERGERS_CORPORATE_CONTROL_AND_GOVERNANCE_H
+
+namespace mergers_corporate_control_and_governance
+{
+
+}
+
+#endif

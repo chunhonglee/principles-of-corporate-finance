@@ -1,0 +1,7 @@
+# Creating an executable of the capital-budgeting.cpp and linking it with gtest and the risk library in source
+add_executable(mergers_corporate_control_and_governance_test
+    mergers_corporate_control_and_governance_test.cpp
+)
+target_link_libraries(mergers_corporate_control_and_governance_test gtest_main)
+target_link_libraries(mergers_corporate_control_and_governance_test mergers_corporate_control_and_governance)
+gtest_discover_tests(mergers_corporate_control_and_governance_test)
