@@ -4,8 +4,7 @@
 
 int main(int argc, char **argv)
 {
-    float interest = value::calculateFutureValuePerpetuity();
-    std::cout << interest << "\n";
+    std::cout << "Hello World!" << std::endl;
 
     return 0;
 }
